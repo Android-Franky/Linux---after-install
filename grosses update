@@ -1,0 +1,54 @@
+
+#!/bin/bash
+clear &&
+echo ===============================================
+echo SYSTEM Update...                    Version 1.0
+echo ===============================================
+sudo apt update && 
+
+echo ===============================================
+echo apt upgrade 
+echo ===============================================
+sudo apt list --upgradable > upgradable-list.txt && 
+sudo apt upgrade -y && 
+sudo apt dist-upgrade -y &&
+
+echo ===============================================
+echo apt autoremove
+echo ===============================================
+sudo apt autoremove -y &&
+
+echo ===============================================
+echo apt flatpak update
+echo ===============================================
+sudo flatpak update -y &&
+
+echo ===============================================
+echo apt flatpak upgrade 
+echo ===============================================
+sudo flatpak upgrade -y &&
+
+echo ===============================================
+echo apt flatpak repair
+echo ===============================================
+sudo flatpak repair &&
+
+echo ===============================================
+echo apt journalctl and systeminfo
+echo ===============================================
+sudo journalctl -b > /home/franky/journalctl.txt &&
+sudo inxi -Fxz > systeminfo.txt &&
+
+echo ===============================================
+echo apt ready
+echo ===============================================
+echo READY...
+
+echo    
+echo "Bitte eine Taste drücken...( ͡° ͜ʖ ͡°)"
+echo    
+read pause
+
+
+
+
